@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         PointsText.text = "Points: 0";
+        GameManager.Instance.Points = 0;
         LivesText.text = "Lives: " + GameManager.Instance.Lives;
     }
 
@@ -70,6 +71,7 @@ public class Player : MonoBehaviour
             if (GameManager.Instance.Lives <= 0)
             {
                 Destroy(gameObject);
+                GameManager.Instance.Lives = 5;
                 SceneManager.LoadScene("MainMenu");
             }
         }
