@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public const float RightSize = 5f;
 
     public int Points;
+    public int Lives = 5;
 
     public static GameManager Instance;
 
