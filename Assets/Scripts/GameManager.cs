@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int Lives = 5;
 
     public static GameManager Instance;
+    public int HighScorePoints;
 
     void Awake()
     {
@@ -30,5 +31,13 @@ public class GameManager : MonoBehaviour
     public void ScorePoints()
     {
         Points++;
+    }
+
+    private void Update()
+    {
+        if (HighScorePoints < GameManager.Instance.Points)
+        {
+            HighScorePoints = GameManager.Instance.Points;
+        }
     }
 }

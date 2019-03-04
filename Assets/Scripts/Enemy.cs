@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 
     public GameObject BulletEnemy;
     public float SpawnTimer = 5f;
+    public float LiveTime = 15f;
 
     void Start()
     {
@@ -21,7 +22,8 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-           transform.Translate(Vector3.back * Time.deltaTime * Speed);    
+        transform.Translate(Vector3.back * Time.deltaTime * Speed);
+        Destroy(gameObject, LiveTime);
     }
 
     void OnTriggerEnter(Collider other)
