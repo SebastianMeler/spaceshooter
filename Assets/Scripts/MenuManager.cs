@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     public Text HighScore;
+    public int HighScorePoints;
 
     public void StartGame()
     {
@@ -20,6 +21,10 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
+        if (HighScorePoints < GameManager.Instance.Points)
+        {
+            HighScorePoints = GameManager.Instance.Points;
+        }
         HighScore.text = "Points: " + GameManager.Instance.Points;
     }
 }
